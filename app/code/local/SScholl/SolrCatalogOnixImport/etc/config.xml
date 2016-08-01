@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<modules>
+		<SScholl_SolrCatalogSolrCatalogOnixImport>
+			<version>0.0.7</version>
+		</SScholl_SolrCatalogSolrCatalogOnixImport>
+	</modules>
+	<global>
+		<helpers>
+			<sschollsolrcatalogoniximport>
+				<class>SScholl_SolrCatalogSolrCatalogOnixImport_Helper</class>
+			</sschollsolrcatalogoniximport>
+		</helpers>
+		<models>
+			<sschollsolrcatalogoniximport>
+				<class>SScholl_SolrCatalogSolrCatalogOnixImport_Model</class>
+			</sschollsolrcatalogoniximport>
+		</models>
+	</global>
+	<crontab>
+		<jobs>
+			<sschollsolrcatalogoniximport_import_onix>
+				<schedule>
+					<cron_expr>* * * * *</cron_expr>
+				</schedule>
+				<run>
+					<model>sschollsolrcatalogoniximport/cronjob_importOnix::run</model>
+				</run>
+			</sschollsolrcatalogoniximport_import_onix>
+		</jobs>
+	</crontab>
+	<default>
+		<sschollsolrcatalogoniximport>
+			<folder>
+				<import>media/sschollsolrcatalogoniximport/import</import>
+				<imported>media/sschollsolrcatalogoniximport/imported</imported>
+			</folder>
+		</sschollsolrcatalogoniximport>
+	</default>
+</config>
